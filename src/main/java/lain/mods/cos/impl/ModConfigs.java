@@ -6,7 +6,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 import net.neoforged.neoforge.common.ModConfigSpec.IntValue;
 
-public class ModConfigs {
+public class ModConfigs {//模组设置
 
     public static BooleanValue CosArmorGuiButton_Hidden;
     public static IntValue CosArmorGuiButton_Left;
@@ -21,7 +21,7 @@ public class ModConfigs {
     public static BooleanValue CosArmorDisableRecipeBook;
     public static BooleanValue CosArmorDisableCosHatCommand;
 
-    public static void registerConfigs() {
+    public static void registerConfigs() {//很好懂
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, new ModConfigSpec.Builder() {
             {
                 comment("These settings only affects client").push("Client");

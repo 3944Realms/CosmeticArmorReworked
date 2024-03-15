@@ -13,7 +13,7 @@ import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.common.NeoForge;
 
 import java.util.UUID;
-
+//客户端Inv管理逻辑
 public class InventoryManagerClient extends InventoryManager {
 
     protected final LoadingCache<UUID, InventoryCosArmor> ClientCache = CacheBuilder.newBuilder().build(new CacheLoader<UUID, InventoryCosArmor>() {
@@ -24,7 +24,7 @@ public class InventoryManagerClient extends InventoryManager {
         }
 
     });
-
+    //在客户端创建容器
     @Override
     public ContainerCosArmor createContainerClient(int windowId, Inventory invPlayer) {
         Player player = Minecraft.getInstance().player;
@@ -37,7 +37,7 @@ public class InventoryManagerClient extends InventoryManager {
             return Dummy;
         return ClientCache.getUnchecked(uuid);
     }
-
+    //登出 清除缓存
     private void handleLoggedOut(ClientPlayerNetworkEvent.LoggingOut event) {
         ClientCache.invalidateAll();
     }
